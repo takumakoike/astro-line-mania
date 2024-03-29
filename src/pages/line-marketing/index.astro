@@ -1,0 +1,31 @@
+---
+// コンポーネントのインポート
+import Base from "../../Layouts/Base.astro"
+
+// ページ内で利用する定数の定義
+const now_url = Astro.request.url;
+const meta_title = "Astroサイト"
+const meta_description="";
+---
+
+<Base 
+	title={meta_title}
+	page_description={meta_description}
+	page_url={now_url}
+>
+	<!-- <header class="mx-auto bg-white w-10/12 rounded-full shadow shadow-gray-400 my-4">
+		<h1 class="p-2 text-lg md:text-3xl font-bold text-center">Astroで作る<br class="md:hidden ">LINEマーケティングマニア</h1>
+	</header> -->
+
+	<main class="mx-auto bg-gray-100">
+        <h2 class="text-center">フォーム形式でのLINE予約機能</h2>
+		
+
+	</main>
+</Base>
+
+<style>
+    main{
+        padding-top: 2rem;
+    }
+</style>

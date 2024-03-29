@@ -1,0 +1,36 @@
+---
+import Base from "../../Layouts/Base.astro"
+
+// ページ内で利用する定数の定義
+const now_url = Astro.request.url;
+const meta_title = "LINE会員証登録のサンプルページ｜Astroサイト"
+const meta_description="";
+---
+
+
+
+<Base 
+	title={meta_title}
+	page_description={meta_description}
+	page_url={now_url}
+>
+
+<main>
+    <h2>LINE会員登録のデモページ</h2>
+    <p>サンプルアカウント</p>
+
+    <h2>手順</h2>
+    <ul>
+        <li>上記のリンクよりLINEに友達登録をする</li>
+        <li>登録すると送られてくるメッセージをタップして会員登録を開始</li>
+        <li>メッセージに従い、姓・名・せい・めい・生年月日・電話番号を回答</li>
+        <li>確認メッセージが送られてきたら『確認（登録）』をタップ</li>
+        <li>完了</li>
+    </ul>
+
+    <h2>実際に登録した情報はこちらから確認できます（LINEによるログインが必要です）</h2>
+    <a href="">LINEでログイン</a>
+    <p>ログインするとマイページへ遷移しますので、そこで登録した情報を確認することができます。</p>
+</main>
+
+</Base>

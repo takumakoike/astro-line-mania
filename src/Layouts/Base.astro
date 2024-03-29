@@ -1,0 +1,90 @@
+---
+interface Props{
+    title: string;
+    page_description: string;
+    page_url: string;
+}
+
+const {title, page_description, page_url} = Astro.props;
+---
+
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+        <meta name="description"content={page_description}>
+        <meta property=”og:title” content={title}/>
+        <meta property=”og:url” content={page_url}/>
+        <meta property=”og:description” content={page_description}/>
+		<title>{title}</title>
+	</head>
+	<body>
+        <slot/>
+	</body>
+</html>
+
+<style is:global>
+	html{
+		font-size: 10px;
+	}
+	main{
+		max-width: 1024px;
+		width: 95%;
+		padding: 5rem 2rem 2rem;
+	}
+	header{
+		position: fixed;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+	h2{
+		color: rgb(37, 99, 235);
+		font-weight: bold;
+		padding: 0 1rem;
+		margin-top: 2rem;
+		font-size: 1.1rem;
+	}
+	p{
+		line-height: 1.6;
+		color: #666;
+		font-weight: 600;
+		font-size: 1.1rem;
+		padding: 0 1rem;
+		margin-top: 0.75rem;
+	}
+	ul{
+		margin: 1rem 0;
+	}
+	li{
+		padding: 0 1rem;
+		margin-left: 2rem;
+		font-size: 1rem;
+		font-weight: bold;
+		color: #333;
+		list-style: decimal;
+	}
+	dl{
+		color:#333;
+		font-size: 1rem;
+		font-weight: bold;
+		margin: 1rem 0;
+	}
+	div > dd:first-of-type{
+		width: 20%;
+	}
+	@media screen and (min-width: 425px){
+		html{
+			font-size: 14px;
+		}
+	}
+	@media screen and (min-width: 768px){
+		html{
+			font-size: 16px;
+		}
+		h2{
+			font-size: 1.4rem;
+		}
+	}
+</style>
